@@ -1,0 +1,118 @@
+.login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #587308;
+    background-image: url("../assets/Background.jpg");
+    background-size: cover;
+}
+
+.loginWrapper {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    cursor: default;
+}
+
+.loginLeft {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'lobster two', 'Roboto';
+    text-transform: none;
+    margin-right:30px;
+}
+
+.loginLeft img {
+    width: 9vw;
+}
+
+.loginRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loginLogo {
+    font-size: 4.5vw;
+    font-weight: 800;
+    color: #285430;
+    margin-bottom: 10px;
+    text-transform: none;
+}
+
+.loginDesc {
+    font-size: 25px;
+    color:  #285430;
+    font-family: 'Roboto-M';
+    text-align: center;
+    font-weight: bold;
+}
+
+.loginBox {
+    height: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.loginInput {
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #285430;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+}
+
+.loginInput:focus {
+    outline: none;
+}
+
+.loginRegisterButton {
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    background-color: #285430;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 80%;
+    align-self: center;
+    font-family: 'Roboto';
+}
+
+.loginForgot {
+    cursor: pointer;
+    text-align: center;
+    color: 285430;
+}
+
+.registerLabel {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Roboto';
+    color: #285430;
+    margin-bottom: 10px;
+}
+
+.loginPageLink {
+    align-self: center;
+    color: #285430;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: 'Roboto';
+}

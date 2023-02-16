@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.forgot {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../assets/Background.jpg");
+    background-size: cover;
+}
+
+.forgotWrapper {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    cursor: default;
+}
+
+.forgotLeft {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right:30px;
+    font-family: 'lobster two','roboto';
+}
+
+.forgotLeft img {
+    width: 9vw;
+}
+
+.forgotRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.forgotLogo {
+    font-size: 4.5vw;
+    font-weight: 800;
+    color: #285430;
+    margin-bottom: 10px;
+    text-transform: none;
+}
+
+.forgotDesc {
+    font-size: 25px;
+    color: #285430;
+    font-family: 'Roboto-M';
+    text-align: center;
+    font-weight: bold;
+}
+
+.forgotBox {
+    height: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.forgotBox h3 {
+    font-size: 60px;
+}
+
+.forgotInput {
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #285430;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+}
+
+.forgotInput:focus {
+    outline: none;
+}
+
+.forgotButton {
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    background-color: #285430;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 80%;
+    align-self: center;
+    font-family: 'Roboto';
+}
+
+.forgotButton:disabled {
+    cursor: not-allowed;
+}
+
+.forgotForgot {
+    align-self: center;
+    color: #285430;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: 'Roboto';
+}
+
+.forgotRegisterButton {
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    background-color: #285430;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 80%;
+    align-self: center;
+    font-family: 'Roboto';
+}
+.forgotLabel {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Roboto';
+    color: #285430;
+    margin-bottom: 10px;
+}
