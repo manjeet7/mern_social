@@ -66,19 +66,19 @@ export const acceptRequesntReducer = (state = {}, action) => {
     }
 };
 
-export const requestStatusReducer = (state = { message: {} }, action) => {
+export const getFollowersReducer = (state = { id: {} }, action) => {
     switch (action.type) {
-        case actions.STATUS_REQUEST_REQUEST:
+        case actions.GET_FOLLOWERS_REQUEST:
             return {
                 loading: true,
             };
-        case actions.STATUS_REQUEST_SUCCESS:
+        case actions.GET_FOLLOWERS_SUCCESS:
             return {
                 loading: false,
                 success: true,
-                message: action.payload,
+                id: action.payload,
             };
-        case actions.STATUS_REQUEST_FAIL:
+        case actions.GET_FOLLOWERS_FAIL:
             return {
                 loading: false,
                 error: action.payload,

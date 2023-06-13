@@ -7,7 +7,7 @@ router
     .route("/newMessage")
     .post(authController.verify, chatController.createMessage);
 router
-    .route("/getMessage")
+    .route("/getMessage/:id")
     .get(authController.verify, chatController.getMessages);
 
 module.exports = router;

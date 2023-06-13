@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { friendListAction } from "../Action/friendAction";
 import Loader from "./Loader";
 import Message from "./Message";
-import ChatOnline from "./ChatOnline";
+
 // import { Add, Remove } from "@material-ui/icons"
 // import { AuthContext } from "../context/AuthContext";
 
@@ -77,7 +77,6 @@ export default function Rightbar({ user }) {
                                 <Online key={u.id} user={u} />
                             ))}
                         </ul>
-                        {/* <ChatOnline /> */}
                     </>
                 )}
             </>
@@ -142,7 +141,6 @@ export default function Rightbar({ user }) {
                             </div>
                         </Link>
                     ))} */}
-                    <ChatOnline />
                 </div>
             </>
         );

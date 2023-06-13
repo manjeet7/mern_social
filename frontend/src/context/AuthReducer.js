@@ -59,21 +59,23 @@ const AuthReducer = (state, action) => {
                 error: action.payload,
             };
         case "FOLLOW":
+            console.log("following is working");
             return {
                 ...state,
                 user: {
                     ...state.user,
-                    followings: [...state.user.followings, action.payload],
+                    following: [...state.user.following, action.payload],
                 },
             };
 
         case "UNFOLLOW":
+            console.log("unfollowing is working");
             return {
                 ...state,
                 user: {
                     ...state.user,
-                    followings: state.user.followings.filter(
-                        (following) => following !== action.payload
+                    following: state.user.following.filter(
+                        (followings) => followings !== action.payload
                     ),
                 },
             };

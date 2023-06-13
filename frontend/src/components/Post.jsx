@@ -18,7 +18,7 @@ export default function Post({ post }) {
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch();
     const postLikes = useSelector((state) => state.postLikes);
-    console.log("post is ", postLikes);
+    // console.log("post is ", postLikes);
     useEffect(() => {}, [post.userId]);
 
     const likeHandler = (id) => {
