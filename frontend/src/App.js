@@ -5,9 +5,10 @@ import Register from "./components/pages/Register.jsx";
 import { useEffect, useState } from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Messenger from "./components/pages/Messanger.jsx";
+import Chat from "./components/pages/Chat.jsx";
 import SessionStorageService from "./services/SessionStorageService.js";
-
+import UserProfile from "./components/pages/UserProfile.jsx";
+import { AuthContextProvider } from "./context/AuthContext";
 function App() {
     // const { user } = getCurrentUser();
     const { user } = true;
@@ -35,14 +36,14 @@ function App() {
     }, []);
     console.log("user available ", userAvailable);
     return (
+        // <AuthContextProvider>
         <Router>
             <Switch>
                 <Route path="/profile">
-                    <Profile />
+                    <UserProfile />
                 </Route>
-                <Route exact path="/profile/:id">
-                    <Profile />
-                </Route>
+                <Route path="/profile/:userId" component={UserProfile} />
+
                 <Route path="/login">{<Login />}</Route>
                 <Route exact path="/">
                     {<Register />}
@@ -61,10 +62,11 @@ function App() {
                     {userAvailable === true ? <Home /> : <Register />}
                 </Route>
                 <Route path="/messanger">
-                    {userAvailable === true ? <Messenger /> : <Register />}
+                    {userAvailable === true ? <Chat /> : <Register />}
                 </Route>
             </Switch>
         </Router>
+        // </AuthContextProvider>
     );
 }
 

@@ -7,7 +7,7 @@ import { ListGroup } from "react-bootstrap";
 
 export default function Closefriend({ user }) {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-    console.log("user is ", user._id);
+    // console.log("user is ", user._id);
     return (
         <ListGroup>
             <ListGroup.Item>

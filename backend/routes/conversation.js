@@ -9,9 +9,9 @@ router
 
 router
     .route("/getConvo/:userId")
-    .get(authController.verify, chatController.getConversation);
+    .post(authController.verify, chatController.getConversation);
 router
-    .route("/getTwoConvo")
-    .get(authController.verify, chatController.getTwoConversation);
+    .route("/getTwoConvo/:firstId/:secondId")
+    .post(authController.verify, chatController.getTwoConversation);
 
 module.exports = router;

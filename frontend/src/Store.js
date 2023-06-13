@@ -11,6 +11,7 @@ import {
     acceptRequesntReducer,
     checkFriendsReducer,
     createRequesntReducer,
+    getFollowersReducer,
     getFriendsReducer,
     incomingRequesntReducer,
     requestStatusReducer,
@@ -24,19 +25,23 @@ const reducer = combineReducers({
     userRequest: createRequesntReducer,
     newRequest: incomingRequesntReducer,
     userDetails: usersDetailsReducer,
-    requestStatus: requestStatusReducer,
+    followersList: getFollowersReducer,
     acceptRequest: acceptRequesntReducer,
     friendList: getFriendsReducer,
     checkFriend: checkFriendsReducer,
     postLikes: postLikeReducer,
     conversationData: createConversationReducer,
 });
-const initialState = {};
+const INITIAL_STATE = {
+    user: JSON.parse(sessionStorage.getItem("userData")) || null,
+    isFetching: false,
+    error: false,
+};
 const middleware = [thunk];
 
 const store = createStore(
     reducer,
-    initialState,
+    INITIAL_STATE,
     composeWithDevTools(applyMiddleware(...middleware))
 );
 

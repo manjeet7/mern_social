@@ -10,7 +10,9 @@ import store from "./Store";
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <App />
+            <AuthContextProvider>
+                <App />
+            </AuthContextProvider>
         </Provider>
     </React.StrictMode>,
     document.getElementById("root")

@@ -110,7 +110,7 @@ export const acceptRequestAction = (id) => async (dispatch) => {
 export const requestStatusAction = (id) => async (dispatch) => {
     try {
         dispatch({
-            type: actions.STATUS_REQUEST_REQUEST,
+            type: actions.GET_FOLLOWERS_REQUEST,
         });
         const token = await SessionStorageService.getSessionStorage(
             "userAccessToken"
@@ -122,18 +122,17 @@ export const requestStatusAction = (id) => async (dispatch) => {
             },
         };
         const result = await axios.post(
-            "http://localhost:3001/api/friend/getStatus",
-            { id },
+            `http://localhost:3001/api/users/check/${id}`,
             config
         );
         console.log("inside friend status action ", result);
         dispatch({
-            type: actions.STATUS_REQUEST_SUCCESS,
+            type: actions.GET_FOLLOWERS_SUCCESS,
             payload: result.data.data,
         });
     } catch (error) {
         dispatch({
-            type: actions.STATUS_REQUEST_FAIL,
+            type: actions.GET_FOLLOWERS_FAIL,
             payload:
                 error.response && error.response.data.message
                     ? error.response.data.message
@@ -169,6 +168,46 @@ export const friendListAction = (id) => async (dispatch) => {
     } catch (error) {
         dispatch({
             type: actions.GET_FRIENDS_FAIL,
+            payload:
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message,
+        });
+    }
+};
+
+export const getFollowersAction = (id) => async (dispatch) => {
+    try {
+        dispatch({
+            type: actions.GET_FOLLOWERS_REQUEST,
+        });
+        const token = await SessionStorageService.getSessionStorage(
+            "userAccessToken"
+        );
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+        };
+        const data = {
+            name: {
+                name: "rahul",
+            },
+        };
+        const result = await axios.post(
+            `http://localhost:3001/api/users/check/${id}`,
+            data,
+            config
+        );
+        console.log("follower list action ", result);
+        dispatch({
+            type: actions.GET_FOLLOWERS_SUCCESS,
+            payload: result.data.data,
+        });
+    } catch (error) {
+        dispatch({
+            type: actions.GET_FOLLOWERS_FAIL,
             payload:
                 error.response && error.response.data.message
                     ? error.response.data.message

@@ -24,7 +24,6 @@ import Loader from "../Loader";
 import Message from "../Message";
 import { Divider } from "@material-ui/core";
 import { useState } from "react";
-import ChatMessage from "../ChatMessage";
 
 // "assets/forest.jpg" was in profile cover image
 //"assets/rawData1.jpg" profile user image
@@ -193,7 +192,6 @@ export default function Profile() {
                         {/* {username} */}
                         <Feed username={user.username} />
                         <Rightbar user={user.username} />
-                        {messageBox && <ChatMessage closeme={closeMessanger} />}
                     </div>
                 </div>
             </div>

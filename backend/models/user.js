@@ -85,6 +85,8 @@ const UserSchema = new mongoose.Schema(
                 ref: "friend",
             },
         ],
+        followers: [],
+        following: [],
     },
 
     { timestamps: true }

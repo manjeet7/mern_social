@@ -12,6 +12,8 @@ import {
     ERR_SERVER_CONNECT,
 } from "../../constants/ApiConstants";
 import SessionStorageService from "../../services/SessionStorageService";
+import * as actions from "../../constants/user/user";
+import { getUserDetailsAction } from "../../Action/UsersAction";
 
 export default function Login() {
     const email = useRef();
@@ -34,7 +36,7 @@ export default function Login() {
                 console.log("API service response: ", result);
                 if (result.success === true) {
                     alert("Login Successful!");
-
+                    
                     console.log("token: ", result.data.accessToken);
                     console.log("user-data: ", result.data.data);
                     SessionStorageService.setSessionStorage(
@@ -45,6 +47,7 @@ export default function Login() {
                         "userData",
                         result.data.data
                     );
+
                     history.push("/home");
                 } else {
                     alert(result.message);

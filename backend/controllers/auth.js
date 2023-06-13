@@ -96,7 +96,7 @@ const logout = async (req, res) => {
 };
 const verify = async (req, res, next) => {
     const authHeader = req.headers.authorization;
-    // console.log("header is ", authHeader);
+    // console.log("header is ", req.headers, authHeader);
     if (!authHeader) {
         res.status(403).json("You are not authorized");
     }

@@ -1,5 +1,6 @@
 const User = require("../models/user");
 const friendmodel = require("../models/friend");
+const Conversation = require("../models/conversation");
 
 const sendRequest = async (req, res, next) => {
     const recipeint = req.body;
@@ -103,6 +104,11 @@ const AccepRequest = async (req, res, next) => {
                 status: 2,
             },
         });
+        const newChat = new Conversation({
+            members: [id, req.user._id],
+        });
+        console.log("new chat ", newChat);
+        const result = await newChat.save();
         console.log("user ", user);
         await user.save();
         res.status(201);
